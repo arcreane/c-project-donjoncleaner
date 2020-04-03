@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC.Items
+namespace ProjetC
 {
     class Sword : Weapons
     {

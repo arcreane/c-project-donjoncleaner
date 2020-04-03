@@ -46,8 +46,8 @@
     <Compile Include="Dungeon\Dungeon.cs" />
     <Compile Include="Entities\Ennemi.cs" />
     <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Game.cs" />
     <Compile Include="Entities\Hero.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Consummable.cs" />
     <Compile Include="Items\Item.cs" />
