@@ -13,10 +13,7 @@ namespace ProjetC
         public string HeroName(string N)
         {
             N = Name;
-
             return N;
-            
         }
-
     }
 }
