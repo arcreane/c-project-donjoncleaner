@@ -18,9 +18,11 @@ namespace ProjetC
 
             Console.WriteLine("\nCongratulation ! You passed the Name test !");
             Console.ReadLine();*/
-
+            Entity.Attack = 100;
+            Entity.Defence = 150;
+            Entity.Health = 20;
             Ennemi ennemi = new Ennemi("DFGHJKLM%");
-            ennemi.SetLevel(5);
+            ennemi.Level = Levels.HARD;
             Console.WriteLine("Health : {0}\nAttack : {1}\nDefence : {2}", Entity.Health, Entity.Attack, Entity.Defence) ;
             Console.ReadLine();
         }
