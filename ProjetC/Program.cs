@@ -14,9 +14,14 @@ namespace ProjetC
 
             Game game = new Game();
 
-            game.CharacterName();
+            /*game.CharacterName();
 
             Console.WriteLine("\nCongratulation ! You passed the Name test !");
+            Console.ReadLine();*/
+
+            Ennemi ennemi = new Ennemi("DFGHJKLM%");
+            ennemi.SetLevel(1555);
+            Console.WriteLine(ennemi.GetName(), ennemi.GetHealth(), ennemi.GetAttack(), ennemi.GetDefence());
             Console.ReadLine();
         }
     }

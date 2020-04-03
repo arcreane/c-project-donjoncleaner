@@ -8,6 +8,6 @@ namespace ProjetC
 {
     class Hero
     {
-
+        
     }
 }
