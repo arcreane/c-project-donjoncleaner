@@ -10,10 +10,5 @@ namespace ProjetC
     {
         public string Name { get; set; }
 
-        public string HeroName(string N)
-        {
-            N = Name;
-            return N;
-        }
     }
 }

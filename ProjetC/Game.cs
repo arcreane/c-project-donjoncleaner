@@ -17,7 +17,7 @@ namespace ProjetC
             {
                 Console.Write("Your journey is about to begin. What is your name ? : ");
                 Hero hero = new Hero();
-                hero.HeroName(Console.ReadLine());
+                hero.Name = Console.ReadLine();
                 Console.Write("\nSo your name is " + hero.Name + " ? (yes/no) : ");
                 String Answer = Console.ReadLine();
                 Answer = Answer.ToLower();

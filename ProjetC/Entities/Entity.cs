@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC
+namespace ProjetC.Entities
 {
-    class Room : Dungeon
+    class Entity
     {
+
     }
 }
