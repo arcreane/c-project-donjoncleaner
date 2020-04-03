@@ -64,6 +64,9 @@ namespace ProjetC
         {
             return Defence;
         }
+
+        // On essaie de donner un niveau à un ennemi et en fonction du niveau le switch donne des attributs différents 
+        // Mais quand on WritleLine les paramètres sont nul
         public void SetLevel(int level)
         {
             Level = level;
