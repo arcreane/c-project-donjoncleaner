@@ -20,8 +20,8 @@ namespace ProjetC
             Console.ReadLine();*/
 
             Ennemi ennemi = new Ennemi("DFGHJKLM%");
-            ennemi.SetLevel(1555);
-            Console.WriteLine(ennemi.GetName(), ennemi.GetHealth(), ennemi.GetAttack(), ennemi.GetDefence());
+            ennemi.SetLevel(5);
+            Console.WriteLine("Health : {0}\nAttack : {1}\nDefence : {2}", Entity.Health, Entity.Attack, Entity.Defence) ;
             Console.ReadLine();
         }
     }

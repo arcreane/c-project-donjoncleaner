@@ -46,25 +46,6 @@ namespace ProjetC
             Defence = Default_Defence;
         }
 
-        public String GetName()
-        {
-            return Name;
-        }
-
-        public Double GetHealth()
-        {
-            return Health;
-        }
-        public int GetAttack()
-        {
-            return Attack;
-        }
-
-        public int GetDefence()
-        {
-            return Defence;
-        }
-
         // On essaie de donner un niveau à un ennemi et en fonction du niveau le switch donne des attributs différents 
         // Mais quand on WritleLine les paramètres sont nul
         public void SetLevel(int level)
