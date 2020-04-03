@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjetC
 {
-    public abstract class Ennemi : Entity
+    class Ennemi : Entity
     {
+        public Ennemi() : base(Name, Health, Attack, Defence)
+        {
 
+        }
     }
 }

@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace ProjetC
 {
-    public abstract class Entity
+    class Entity
     {
-        private string name;
-        private int health;
-        private int attack;
-        private int defence;
-        public void EntityName(string E_name)
+        public static String Name { get; set; }
+        public static int Health { get; set; }
+        public static int Attack { get; set; }
+        public static int Defence { get; set; }
+        public Entity(String name, int health, int attack, int defence)
         {
-            name = E_name;
+            Name = name;
+            Health = health;
+            Attack = attack;
+            Defence = defence;
         }
     }
 }
