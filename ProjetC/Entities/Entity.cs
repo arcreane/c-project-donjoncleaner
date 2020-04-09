@@ -9,9 +9,9 @@ namespace ProjetC
     class Entity
     {
         public static String Name { get; set; }
-        public static Double Health { get; set; }
-        public static int Attack { get; set; }
-        public static int Defence { get; set; }
+        public static Double Health = 20;
+        public static int Attack = 2;
+        public static int Defence = 1;
         public Entity(String name, double health, int attack, int defence)
         {
             Name = name;
