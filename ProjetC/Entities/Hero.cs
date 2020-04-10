@@ -8,6 +8,12 @@ namespace ProjetC
 {
     class Hero
     {
-        
+        public string Name { get; set; }
+
+        public string HeroName(String N)
+        {
+            Name = N;
+            return N;
+        }
     }
 }
