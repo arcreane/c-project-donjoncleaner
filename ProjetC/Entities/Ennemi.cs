@@ -30,31 +30,36 @@ namespace ProjetC
                 switch (m_eLevel)
                 {
                     case Levels.EASY:
-                        Ennemi.Health *= 1.2;
-                        Ennemi.Attack += 15;
-                        Ennemi.Defence += 10;
+                        setValues(1.2, 15, 10);
                         break;
                     case Levels.MODERATE:
-                        Ennemi.Health *= 1.5;
-                        Ennemi.Attack += 25;
-                        Ennemi.Defence += 20;
+                        setValues(1.5, 25, 20);
                         break;
                     case Levels.HARD:
-                        Ennemi.Health *= 1.75;
-                        Ennemi.Attack += 35;
-                        Ennemi.Defence += 35;
+                        Health *= 1.75;
+                        Attack += 35;
+                        Defence += 35;
                         break;
                     case Levels.DEATH:
-                        Ennemi.Health *= 2.0;
-                        Ennemi.Attack += 45;
-                        Ennemi.Defence += 40;
+                        Health *= 2.0;
+                        Attack += 45;
+                        Defence += 40;
                         break;
                     default:
                         break;
                 }
             }
         }
-        public Ennemi() : base(Name, Health, Attack, Defence)
+
+        void setValues(double health, int atack, int defence)
+        {
+            Health *= health;
+            Attack += atack;
+            Defence += defence;
+        }
+
+
+        public Ennemi() : base()
         {
             
         }
