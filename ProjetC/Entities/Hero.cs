@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjetC
 {
-    class Hero
+    class Hero : Entity
     {
-        public String Name { get; set; }
-
-        public string SetHeroName(String name)
+        public Hero() : base(Name, Health, Attack, Defence)
         {
-            Name = name;
-            return Name;
+
         }
     }
 }

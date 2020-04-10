@@ -30,24 +30,24 @@ namespace ProjetC
                 switch (m_eLevel)
                 {
                     case Levels.EASY:
-                        Entity.Health *= 1.2;
-                        Entity.Attack += 15;
-                        Entity.Defence += 10;
+                        Ennemi.Health *= 1.2;
+                        Ennemi.Attack += 15;
+                        Ennemi.Defence += 10;
                         break;
                     case Levels.MODERATE:
-                        Entity.Health *= 1.5;
-                        Entity.Attack += 25;
-                        Entity.Defence += 20;
+                        Ennemi.Health *= 1.5;
+                        Ennemi.Attack += 25;
+                        Ennemi.Defence += 20;
                         break;
                     case Levels.HARD:
-                        Entity.Health *= 1.75;
-                        Entity.Attack += 35;
-                        Entity.Defence += 35;
+                        Ennemi.Health *= 1.75;
+                        Ennemi.Attack += 35;
+                        Ennemi.Defence += 35;
                         break;
                     case Levels.DEATH:
-                        Entity.Health *= 2.0;
-                        Entity.Attack += 45;
-                        Entity.Defence += 40;
+                        Ennemi.Health *= 2.0;
+                        Ennemi.Attack += 45;
+                        Ennemi.Defence += 40;
                         break;
                     default:
                         break;
@@ -58,26 +58,6 @@ namespace ProjetC
         {
             
         }
-        public void SetName(String name)
-        {
-            Name = name;
-        }
-
-        public String GetName()
-        {
-            return Name;
-        }
-        public Double GetHealth()
-        {
-            return Health;
-        }
-        public int GetAttack()
-        {
-            return Attack;
-        }
-        public int GetDefence()
-        {
-            return Defence;
-        }
+        
     }
 }
