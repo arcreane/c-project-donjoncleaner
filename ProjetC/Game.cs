@@ -94,7 +94,8 @@ namespace ProjetC
         public void Tuto()
         {
             Ennemi ennemi = new Ennemi();
-            Console.WriteLine("{0} :\nHealth : {1}\nAttack : {2}\nDefence : {3}", Entity.Name, Entity.Health, Entity.Attack, Entity.Defence);
+            ennemi.SetName("Ennemi A");
+            Console.WriteLine("{0} :\nHealth : {1}\nAttack : {2}\nDefence : {3}", ennemi.GetName(), ennemi.GetHealth(),ennemi.GetAttack(), ennemi.GetDefence());
             Console.ReadLine();
         }
     }

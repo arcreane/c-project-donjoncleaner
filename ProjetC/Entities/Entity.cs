@@ -19,5 +19,6 @@ namespace ProjetC
             Attack = attack;
             Defence = defence;
         }
+
     }
 }

@@ -8,15 +8,12 @@ namespace ProjetC
 {
     class Hero
     {
-        public string Name { get; set; }
-        public Double Health = 100;
-        public int Attack = 20;
-        public int Defence = 10;
+        public String Name { get; set; }
 
-        public string HeroName(String N)
+        public string SetHeroName(String name)
         {
-            Name = N;
-            return N;
+            Name = name;
+            return Name;
         }
     }
 }

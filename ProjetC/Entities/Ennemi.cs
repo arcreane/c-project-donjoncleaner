@@ -56,7 +56,28 @@ namespace ProjetC
         }
         public Ennemi() : base(Name, Health, Attack, Defence)
         {
-            Entity entity = new Entity("Test", 50, 15, 10);
+            
+        }
+        public void SetName(String name)
+        {
+            Name = name;
+        }
+
+        public String GetName()
+        {
+            return Name;
+        }
+        public Double GetHealth()
+        {
+            return Health;
+        }
+        public int GetAttack()
+        {
+            return Attack;
+        }
+        public int GetDefence()
+        {
+            return Defence;
         }
     }
 }
