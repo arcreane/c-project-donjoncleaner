@@ -62,5 +62,9 @@ namespace ProjetC
                     break;
             }
         }
+        /*public void Fight()
+        {
+            ICI LE FIGHT
+        }*/
     }
 }
