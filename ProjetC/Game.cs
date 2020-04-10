@@ -42,7 +42,7 @@ namespace ProjetC
 
         public void GameDifficulty()
         {
-            Ennemi ennemi = new Ennemi("Ennemi A");
+            Ennemi ennemi = new Ennemi();
 
             Console.WriteLine("Choisissez la difficulté générale du jeu :\n[1]-Easy\n[2]-MODERATE\n[3]-HARD\n[4]-DEATH");
             string Answer = Console.ReadLine();

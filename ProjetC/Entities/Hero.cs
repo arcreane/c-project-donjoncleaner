@@ -9,6 +9,9 @@ namespace ProjetC
     class Hero
     {
         public string Name { get; set; }
+        public  Double Health = 100;
+        public  int Attack = 20;
+        public  int Defence = 10;
 
         public string HeroName(String N)
         {

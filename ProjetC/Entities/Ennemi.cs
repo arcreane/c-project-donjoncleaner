@@ -54,9 +54,9 @@ namespace ProjetC
                 }
             }
         }
-        public Ennemi(String Name) : base(Name, Health, Attack, Defence)
+        public Ennemi() : base(Name, Health, Attack, Defence)
         {
-
+            Entity entity = new Entity("Test", 50, 15, 10);
         }
     }
 }
