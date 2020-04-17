@@ -36,7 +36,7 @@ namespace ProjetC
                         setValues(1.5, 25, 20);
                         break;
                     case Levels.HARD:
-                        setValues(1.75, 35, 35);
+                        setValues(1.75, 35, 30);
                         break;
                     case Levels.DEATH:
                         setValues(2, 45, 40);
@@ -59,6 +59,5 @@ namespace ProjetC
         {
 
         }
-
     }
 }

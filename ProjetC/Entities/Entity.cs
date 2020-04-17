@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetC
 {
-    enum ENNEMI_TYPE
+    enum ENNEMI_NAME
     {
 
     }
@@ -23,4 +23,3 @@ namespace ProjetC
         }
     }
 }
-

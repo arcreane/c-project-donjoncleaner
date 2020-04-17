@@ -82,7 +82,7 @@ namespace ProjetC
 
             Game game = new Game();
             //Afficher ici les stats du 1er ennemi et du heros !
-            game.Tuto();
+            game.DisplayInfos(ennemi);
 
             Console.ReadLine();
         }
