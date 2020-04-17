@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProjetC
 {
-    enum ENNEMI_NAME
+    enum Ennemi_Name
     {
-
+        Chevalier,
+        Barbare,
+        Voleur,
+        Mage,
+        Archer,
     }
     class Entity
     {
-
+        public String Name { get; set; }
         public Double Health { get; set; } = 100;
         public int Attack { get; set; } = 20;
         public int Defence { get; set; } = 10;

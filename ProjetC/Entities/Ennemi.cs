@@ -47,14 +47,15 @@ namespace ProjetC
             }
         }
 
-        void setValues(double health, int atack, int defence)
+        Random random = new Random();
+        void setValues(double health, int attack, int defence)
         {
+            Array values = Enum.GetValues(typeof(Ennemi_Name));
+            Name = values.GetValue(random.Next(values.Length)).ToString();
             Health *= health;
-            Attack += atack;
+            Attack += attack;
             Defence += defence;
         }
-
-
         public Ennemi() : base()
         {
 

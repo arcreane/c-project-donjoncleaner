@@ -8,9 +8,9 @@ namespace ProjetC
 {
     class Game
     {
-        public void DisplayInfos(Ennemi ennemi)
+        public void DisplayInfos(Entity entity)
         {
-            Console.WriteLine("\nName : Ennemi 1\nLife : {0}\nAtk : {1}\nDefence : {2}", ennemi.Health, ennemi.Attack, ennemi.Defence);
+            Console.WriteLine("\nName : {0}\nLife : {1}\nAtk : {2}\nDefence : {3}", entity.Name, entity.Health, entity.Attack, entity.Defence);
         }
     }
 }

@@ -20,8 +20,8 @@ namespace ProjetC
             {
 
                 Console.Write("Your journey is about to begin. What is your name ? : ");
-                string name = Console.ReadLine();
-                Console.Write("\nSo your name is {0} ? (yes/no) : ", name);
+                hero.Name = Console.ReadLine();
+                Console.Write("\nSo your name is {0} ? (yes/no) : ", hero.Name);
 
                 String Answer = Console.ReadLine();
                 Answer = Answer.ToLower();
@@ -83,6 +83,7 @@ namespace ProjetC
             Game game = new Game();
             //Afficher ici les stats du 1er ennemi et du heros !
             game.DisplayInfos(ennemi);
+            game.DisplayInfos(hero);
 
             Console.ReadLine();
         }
