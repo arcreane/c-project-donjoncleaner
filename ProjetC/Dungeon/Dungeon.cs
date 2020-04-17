@@ -8,5 +8,15 @@ namespace ProjetC
 {
     class Dungeon
     {
+        public Room Room { get; set; }
+        public Dungeon()
+        {
+
+        }
+
+        public void SetParameters(Room room)
+        {
+            Room = room;
+        }
     }
 }
