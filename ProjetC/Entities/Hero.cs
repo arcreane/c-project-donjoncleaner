@@ -8,9 +8,9 @@ namespace ProjetC
 {
     class Hero : Entity
     {
-        public Hero() : base()
+        public Hero()
         {
-
+            
         }
     }
 }
