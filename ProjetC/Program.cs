@@ -50,7 +50,7 @@ namespace ProjetC
             {
                 do
                 {
-                    Console.WriteLine("\nChoisissez la difficulté générale du jeu :\n[1]-Easy\n[2]-MODERATE\n[3]-HARD\n[4]-DEATH");
+                    Console.WriteLine("\nChoisissez la difficulté générale du jeu :\n[1]-Easy\n[2]-MODERATE\n[3]-HARD\n[4]-DEATH"); 
                     string Answer = Console.ReadLine();
                     ennemi.Level = (Levels)(int.Parse(Answer) - 1);
 
