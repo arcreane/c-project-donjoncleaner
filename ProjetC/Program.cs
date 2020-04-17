@@ -58,6 +58,10 @@ namespace ProjetC
                         Console.WriteLine("La reponse : {0} n'est pas valide !", (int.Parse(Answer)));
                         Selection = false;
                     }
+                    else
+                    {
+                        Selection = true;
+                    }
                 }
                 while (!Selection);
 
@@ -77,9 +81,8 @@ namespace ProjetC
             while (DifficultySelection);
 
             Game game = new Game();
-            game.Tuto();
-
             //Afficher ici les stats du 1er ennemi et du heros !
+            game.Tuto();
 
             Console.ReadLine();
         }
