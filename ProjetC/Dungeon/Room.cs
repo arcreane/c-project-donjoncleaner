@@ -45,6 +45,13 @@ namespace DungeonCleaner
         public void Enter()
         {
             // foreach Enemies -> pour chaque Enemye Battle battle = new Battle(hero, enemy);
+            int i = 0;
+            foreach (Enemy element in Enemies)
+            {
+                Battle battle = new Battle(hero, enemy);
+                i++;
+            }
+
         }
 
         public void Exit()
