@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC
+namespace DungeonCleaner
 {
     enum Levels
     {
@@ -17,13 +17,49 @@ namespace ProjetC
     {
         public Levels Level { get; set; }
         public Hero Hero { get; set; }
-        public Game(Hero hero) 
+        public Game() 
         {
+            
+        }
+           
+        public void Init()
+        {
+            Console.WriteLine("Welcome to the C# project !\n");
+
+            bool valideName = false;
+            Hero hero = new Hero();
+
+            do
+            {
+
+                Console.Write("Your journey is about to begin. What is your name ? : ");
+                hero.Name = Console.ReadLine();
+                Console.Write("\nSo your name is {0} ? (yes/no) : ", hero.Name);
+
+                String Answer = Console.ReadLine();
+                Answer = Answer.ToLower();
+
+                if (Answer == "yes")
+                {
+                    valideName = true;
+                }
+                else if (Answer == "no")
+                {
+                    valideName = false;
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valide anwser !\n");
+                }
+            }
+            while (valideName == false);
+
             Hero = hero;
+        }
 
-            bool DifficultySelection = true;
-            bool Selection = true;
-
+        public void Start()
+        {
             do
             {
                 do
@@ -34,34 +70,27 @@ namespace ProjetC
                     if ((int.Parse(Answer) - 1) > 3 || (int.Parse(Answer) - 1) < 0)
                     {
                         Console.WriteLine("La reponse : {0} n'est pas valide !", (int.Parse(Answer)));
-                        Selection = false;
                     }
                     else
                     {
-                        Selection = true;
+                        break;
                     }
                 }
-                while (!Selection);
+                while (true);
 
                 Console.WriteLine("\nVotre mode de jeu a été réglé en : {0}", Level);
-                Console.WriteLine("Voulez-vous la modifier ? (yes/no)");
+                Console.WriteLine("Souhaitez-vous valider cette difficulté ? (yes/no)");
                 string Validation = Console.ReadLine().ToLower();
                 if (Validation == "yes")
                 {
-                    DifficultySelection = true;
-                    Console.Clear();
-                }
-                else
-                {
-                    DifficultySelection = false;
+                    break;
                 }
             }
-            while (DifficultySelection);
-        }
+            while (true);
 
-        public void DisplayInfos(Entity entity)
-        {
-            Console.WriteLine("\nName : {0}\nLife : {1}\nAtk : {2}\nDefence : {3}", entity.Name, entity.Health, entity.Attack, entity.Defence);
+            Dungeon dungeon = new Dungeon();
+
+            dungeon.Enter(Hero);
         }
     }
 }

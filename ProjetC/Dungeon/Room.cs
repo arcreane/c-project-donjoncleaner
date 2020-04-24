@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC
+namespace DungeonCleaner
 {
     class Room
     {
-        private List<Ennemi> ennemis = new List<Ennemi>();
-        
         private int m_count;
 
+        private List<Ennemi> Ennemis { get; set; }
         public Hero Hero { get; set; }
+        public int Depth { get; set; }
 
         public Room(Hero hero, Levels level) 
         {
@@ -38,10 +38,18 @@ namespace ProjetC
 
             for (int i = 0; i < m_count; i++)
             {
-                ennemis.Add(new Ennemi());
+                Ennemis.Add(new Ennemi());
             }
+        }
 
+        public void Enter()
+        {
+            // foreach Ennemis -> pour chaque ennemie Battle battle = new Battle(hero, enemy);
+        }
 
+        public void Exit()
+        {
+            // Console.WriteLine ->
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC.Dungeon
+namespace DungeonCleaner
 {
     class Battle
     {
@@ -17,7 +17,6 @@ namespace ProjetC.Dungeon
         {
             Hero = hero;
             Ennemi = ennemi;
-
 
         }
     }
