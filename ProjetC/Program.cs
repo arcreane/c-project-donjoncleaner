@@ -38,18 +38,19 @@ namespace ProjetC
                 else
                 {
                     Console.WriteLine("Please enter a valide anwser !\n");
-                    Console.WriteLine();
                 }
             }
             while (valideName == false);
 
-
-
             Ennemi ennemi = new Ennemi();
             Game game = new Game();
             ennemi.Level = game.GetLevel();
-            game.DisplayInfos(ennemi);
-            game.DisplayInfos(hero);
+            /*game.DisplayInfos(ennemi);
+            game.DisplayInfos(hero);*/
+
+            Room room = new Room();
+
+            room.SetEnnemis(3);
 
 
             Console.ReadLine();

@@ -8,7 +8,7 @@ namespace ProjetC
 {
     class Hero : Entity
     {
-    public Hero() : base()
+        public Hero() : base()
         {
             Health = 100;
             Attack = 25;
