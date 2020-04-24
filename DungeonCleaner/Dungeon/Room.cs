@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC
+namespace DungeonCrawler
 {
     class Room
     {
         private List<Ennemi> ennemis = new List<Ennemi>();
-        
         private int m_count;
 
         public Hero Hero { get; set; }
+        public int Depth { get; set; }
 
         public Room(Hero hero, Levels level) 
         {
@@ -40,8 +40,6 @@ namespace ProjetC
             {
                 ennemis.Add(new Ennemi());
             }
-
-
         }
     }
 }

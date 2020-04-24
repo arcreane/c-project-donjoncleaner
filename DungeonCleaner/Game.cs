@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC
+namespace DungeonCleaner
 {
     enum Levels
     {
@@ -13,14 +13,53 @@ namespace ProjetC
         HARD,
         DEATH
     }
+
     class Game
     {
         public Levels Level { get; set; }
         public Hero Hero { get; set; }
-        public Game(Hero hero) 
-        {
-            Hero = hero;
 
+        public Game() 
+        {
+
+        }
+
+        public void Init() {
+            Console.WriteLine("Welcome to the C# project !\n");
+
+            bool valideName = false;
+            Hero hero = new Hero();
+
+            do
+            {
+
+                Console.Write("Your journey is about to begin. What is your name ? : ");
+                hero.Name = Console.ReadLine();
+                Console.Write("\nSo your name is {0} ? (yes/no) : ", hero.Name);
+
+                String Answer = Console.ReadLine();
+                Answer = Answer.ToLower();
+
+                if (Answer == "yes")
+                {
+                    valideName = true;
+                }
+                else if (Answer == "no")
+                {
+                    valideName = false;
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valide anwser !\n");
+                }
+            }
+            while (valideName == false);
+
+            Hero = hero;
+		}
+
+        public void Start() {
             bool DifficultySelection = true;
             bool Selection = true;
 
@@ -57,11 +96,9 @@ namespace ProjetC
                 }
             }
             while (DifficultySelection);
-        }
 
-        public void DisplayInfos(Entity entity)
-        {
-            Console.WriteLine("\nName : {0}\nLife : {1}\nAtk : {2}\nDefence : {3}", entity.Name, entity.Health, entity.Attack, entity.Defence);
-        }
+            /*Dungeon dungeon = new Dungeon();
+            dungeon.Enter(Hero);*/
+		}
     }
 }

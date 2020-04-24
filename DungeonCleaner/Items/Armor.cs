@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetC
+namespace DungeonCleaner
 {
-    class Item
+    class Armor : Item
     {
-        public int Durability;
     }
 }
