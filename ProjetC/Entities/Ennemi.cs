@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace ProjetC
 {
-    enum Levels
-    {
-        EASY,
-        MODERATE,
-        HARD,
-        DEATH
-    }
     class Ennemi : Entity
     {
 

@@ -43,15 +43,9 @@ namespace ProjetC
             while (valideName == false);
 
             Ennemi ennemi = new Ennemi();
-            Game game = new Game();
-            ennemi.Level = game.GetLevel(); 
-            /*game.DisplayInfos(ennemi);
-            game.DisplayInfos(hero);*/
-
-            Room room = new Room();
-
-            room.SetEnnemis(3);
-
+            Game game = new Game(hero);
+            game.DisplayInfos(ennemi);
+            game.DisplayInfos(hero);
 
             Console.ReadLine();
         }

@@ -8,26 +8,50 @@ namespace ProjetC
 {
     class Room
     {
-        public void SetEnnemis(int inputNumber)
+        private List<Ennemi> ennemis = new List<Ennemi>();
+        
+        private int m_count;
+        private Levels m_eLevel;
+        public Levels Level
         {
-            //On essaie de crée un nombre d'ennemi égal au nombre envoyé en paramètre puis de les concerver dans une liste
-
-            int i;
-
-            //Création de la liste 
-            List<Ennemi> ennemiList = new List<Ennemi>();
-
-            //Boucle afin de crée le bon nombre d'ennemi
-            for (i = 0; i < inputNumber; i++)
+            get
             {
-                //Création d'un ennemi
-                Ennemi ennemi = new Ennemi();
+                return m_eLevel;
+            }
 
-                //Ajout à la liste
-                ennemiList.Add(new Ennemi() {Name = ennemi.Name, Health = ennemi.Health, Attack = ennemi.Attack, Defence = ennemi.Defence });
+            set
+            {
+                m_eLevel = value;
+                switch (m_eLevel)
+                {
+                    case Levels.EASY:
+                        m_count = 2;
+                        break;
+                    case Levels.MODERATE:
+                        m_count = 3;
+                        break;
+                    case Levels.HARD:
+                        m_count = 4;
+                        break;
+                    case Levels.DEATH:
+                        m_count = 5;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
 
-                //Affichage de la liste
-                Console.WriteLine(ennemiList[i]);
+        public Hero Hero { get; set; }
+
+        public Room(Hero hero, Levels level) 
+        {
+            Hero = hero;
+            Level = level;
+
+            for (int i = 0; i < m_count; i++)
+            {
+                
             }
         }
     }
