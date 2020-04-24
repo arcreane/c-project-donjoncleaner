@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCleaner
+namespace ProjetC
 {
-    class Sword : Weapons
+    class Medikit : Consummable
     {
+
     }
 }

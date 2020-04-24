@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCleaner
+namespace ProjetC
 {
-    class Consummable : Item
+    class Weapons : Item
     {
     }
 }

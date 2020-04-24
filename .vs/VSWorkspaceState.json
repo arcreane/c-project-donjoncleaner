@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ProjetC",
-    "\\ProjetC\\Dungeon",
-    "\\ProjetC\\Entities",
-    "\\ProjetC\\Items"
+    ""
   ],
-  "SelectedNode": "\\ProjetC\\ProjetC.csproj",
+  "SelectedNode": "\\ProjetC.sln",
   "PreviewInSolutionExplorer": false
 }

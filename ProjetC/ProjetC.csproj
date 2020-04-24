@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B14D56CB-67AC-49C0-B607-C8C552DA2CC5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DungeonCleaner</RootNamespace>
-    <AssemblyName>DungeonCleaner</AssemblyName>
+    <RootNamespace>ProjetC</RootNamespace>
+    <AssemblyName>ProjetC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

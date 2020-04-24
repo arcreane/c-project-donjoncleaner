@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonCleaner
+namespace ProjetC
 {
     class Ennemi : Entity
     {
