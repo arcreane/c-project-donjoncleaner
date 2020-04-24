@@ -44,7 +44,7 @@ namespace ProjetC
 
             Ennemi ennemi = new Ennemi();
             Game game = new Game();
-            ennemi.Level = game.GetLevel();
+            ennemi.Level = game.GetLevel(); 
             /*game.DisplayInfos(ennemi);
             game.DisplayInfos(hero);*/
 
