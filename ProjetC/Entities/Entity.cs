@@ -17,7 +17,7 @@ namespace DungeonCleaner
     class Entity
     {
         public String Name { get; set; }
-        public Double Health { get; set; } = 100;
+        public int Health { get; set; } = 30;
         public int Attack { get; set; } = 20;
         public int Defence { get; set; } = 10;
 

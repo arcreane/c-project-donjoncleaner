@@ -23,16 +23,16 @@ namespace DungeonCleaner
                 switch (m_eLevel)
                 {
                     case Levels.EASY:
-                        setValues(1.2, 15, 10);
+                        setValues(5, 0, 0);
                         break;
                     case Levels.MODERATE:
-                        setValues(1.5, 25, 20);
+                        setValues(10, 7, 4);
                         break;
                     case Levels.HARD:
-                        setValues(1.75, 35, 30);
+                        setValues(15, 10, 7);
                         break;
                     case Levels.DEATH:
-                        setValues(2, 45, 40);
+                        setValues(20, 13, 10);
                         break;
                     default:
                         break;
@@ -41,7 +41,7 @@ namespace DungeonCleaner
         }
 
         Random random = new Random();
-        void setValues(double health, int attack, int defence)
+        void setValues(int health, int attack, int defence)
         {
             Array values = Enum.GetValues(typeof(Enemy_Name));
             Name = values.GetValue(random.Next(values.Length)).ToString();
