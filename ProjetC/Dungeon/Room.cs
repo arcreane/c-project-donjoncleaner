@@ -10,7 +10,7 @@ namespace DungeonCleaner
     {
         private int m_count;
 
-        private List<Ennemi> Ennemis { get; set; }
+        private List<Enemy> Enemies { get; set; }
         public Hero Hero { get; set; }
         public int Depth { get; set; }
 
@@ -38,13 +38,13 @@ namespace DungeonCleaner
 
             for (int i = 0; i < m_count; i++)
             {
-                Ennemis.Add(new Ennemi());
+                Enemies.Add(new Enemy());
             }
         }
 
         public void Enter()
         {
-            // foreach Ennemis -> pour chaque ennemie Battle battle = new Battle(hero, enemy);
+            // foreach Enemies -> pour chaque Enemye Battle battle = new Battle(hero, enemy);
         }
 
         public void Exit()

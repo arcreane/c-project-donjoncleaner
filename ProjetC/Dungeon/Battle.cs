@@ -9,14 +9,14 @@ namespace DungeonCleaner
     class Battle
     {
         public Hero Hero { get; set; }
-        public Ennemi Ennemi { get; set; }
+        public Enemy Enemy { get; set; }
 
         private Boolean m_turn;
 
-        public Battle(Hero hero, Ennemi ennemi)
+        public Battle(Hero hero, Enemy Enemy)
         {
             Hero = hero;
-            Ennemi = ennemi;
+            Enemy = Enemy;
 
         }
     }

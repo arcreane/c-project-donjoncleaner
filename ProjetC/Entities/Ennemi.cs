@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCleaner
 {
-    class Ennemi : Entity
+    class Enemy : Entity
     {
 
         private Levels m_eLevel;
@@ -43,13 +43,13 @@ namespace DungeonCleaner
         Random random = new Random();
         void setValues(double health, int attack, int defence)
         {
-            Array values = Enum.GetValues(typeof(Ennemi_Name));
+            Array values = Enum.GetValues(typeof(Enemy_Name));
             Name = values.GetValue(random.Next(values.Length)).ToString();
             Health *= health;
             Attack += attack;
             Defence += defence;
         }
-        public Ennemi() : base()
+        public Enemy() : base()
         {
 
         }

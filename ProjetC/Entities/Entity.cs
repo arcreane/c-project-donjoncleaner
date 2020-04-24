@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCleaner
 {
-    enum Ennemi_Name
+    enum Enemy_Name
     {
         Chevalier,
         Barbare,

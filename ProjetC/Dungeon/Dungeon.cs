@@ -12,7 +12,7 @@ namespace DungeonCleaner
         private int m_index = 1;
 
         public Hero Hero { get; set; }
-        public Room Room { get; set; }
+        public List<Room> Rooms { get; set; }
         public Dungeon()
         {
             
