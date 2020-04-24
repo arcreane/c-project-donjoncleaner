@@ -2,9 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.ProjetC PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ProjetC/Dungeon/Room.cs">
     <Files>
-      <File FileName="ProjetC/Game.cs" Line="65" Column="15" />
-      <File FileName="ProjetC/Dungeon/Room.cs" Line="56" Column="1" />
-      <File FileName="ProjetC/Dungeon/Battle.cs" />
+      <File FileName="ProjetC/Game.cs" Line="70" Column="69" />
+      <File FileName="ProjetC/Dungeon/Room.cs" Line="60" Column="1" />
+      <File FileName="ProjetC/Dungeon/Battle.cs" Line="40" Column="36" />
+      <File FileName="ProjetC/Dungeon/Dungeon.cs" Line="1" Column="1" />
+      <File FileName="ProjetC/Entities/Entity.cs" Line="1" Column="1" />
+      <File FileName="ProjetC/Program.cs" Line="1" Column="1" />
+      <File FileName="ProjetC/App.config" Line="1" Column="1" />
+      <File FileName="ProjetC/Entities/Hero.cs" Line="1" Column="1" />
+      <File FileName="ProjetC/Entities/Ennemi.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,6 +20,8 @@
               <Node name="Dungeon" expanded="True">
                 <Node name="Room.cs" selected="True" />
               </Node>
+              <Node name="Entities" expanded="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>
