@@ -18,7 +18,7 @@ namespace DungeonCleaner
             
         }
 
-        public void Enter(Hero hero)
+        public void Enter(Hero hero, Levels level)
         {
             Hero = hero;
 
@@ -26,8 +26,13 @@ namespace DungeonCleaner
             Console.WriteLine("Le héro vient de rentrer dans le donjon");
 
             // Faut faire un système (for) qui crée des rooms (jusqu'à 8) une par une et qui incrémente m_index et qui défini Room.Depth = m_index;
+            for (m_index = 1; m_index <= 8; m_index++)
+            {
+                Room room = new Room(hero, level);
+                Console.WriteLine(m_index);
+            }
 
-            Console.ReadLine(); // à supprimer
+            Console.ReadLine(); 
         }
     }
 }

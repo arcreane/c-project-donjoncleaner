@@ -90,7 +90,7 @@ namespace DungeonCleaner
 
             Dungeon dungeon = new Dungeon();
 
-            dungeon.Enter(Hero);
+            dungeon.Enter(Hero, Level);
         }
     }
 }
