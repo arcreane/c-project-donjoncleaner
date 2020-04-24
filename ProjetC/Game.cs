@@ -62,6 +62,6 @@ namespace ProjetC
         public void DisplayInfos(Entity entity)
         {
             Console.WriteLine("\nName : {0}\nLife : {1}\nAtk : {2}\nDefence : {3}", entity.Name, entity.Health, entity.Attack, entity.Defence);
-        }
+        }//jsp
     }
 }
