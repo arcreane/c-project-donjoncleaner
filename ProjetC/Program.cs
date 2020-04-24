@@ -42,12 +42,7 @@ namespace ProjetC
             }
             while (valideName == false);
 
-            Ennemi ennemi = new Ennemi();
             Game game = new Game(hero);
-            game.DisplayInfos(ennemi);
-            game.DisplayInfos(hero);
-
-            Console.ReadLine();
         }
     }
 }
