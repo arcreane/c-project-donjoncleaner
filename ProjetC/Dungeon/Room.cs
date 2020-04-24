@@ -11,48 +11,37 @@ namespace ProjetC
         private List<Ennemi> ennemis = new List<Ennemi>();
         
         private int m_count;
-        private Levels m_eLevel;
-        public Levels Level
-        {
-            get
-            {
-                return m_eLevel;
-            }
-
-            set
-            {
-                m_eLevel = value;
-                switch (m_eLevel)
-                {
-                    case Levels.EASY:
-                        m_count = 2;
-                        break;
-                    case Levels.MODERATE:
-                        m_count = 3;
-                        break;
-                    case Levels.HARD:
-                        m_count = 4;
-                        break;
-                    case Levels.DEATH:
-                        m_count = 5;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
 
         public Hero Hero { get; set; }
 
         public Room(Hero hero, Levels level) 
         {
             Hero = hero;
-            Level = level;
+
+            switch (level)
+            {
+                case Levels.EASY:
+                    m_count = 2;
+                    break;
+                case Levels.MODERATE:
+                    m_count = 3;
+                    break;
+                case Levels.HARD:
+                    m_count = 4;
+                    break;
+                case Levels.DEATH:
+                    m_count = 5;
+                    break;
+                default:
+                    break;
+            }
 
             for (int i = 0; i < m_count; i++)
             {
-                
+                ennemis.Add(new Ennemi());
             }
+
+
         }
     }
 }
