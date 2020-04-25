@@ -28,7 +28,7 @@ namespace DungeonCleaner
             EnemyDefence = enemy.Defence;
 
             Console.WriteLine("Un ennemi se présente devant vous ! Vous vous mettez en posture de combat !\n");
-            Console.WriteLine("Un rapide analyse de l'ennemi vous révèle ses caractéristiques :\n[1]-Nom : {0}\n[2]-PV : {1}\n[3]-Attaque : {2}\n[4]-Défense : {3}\n", Enemy.Name, EnemyHealth, EnemyAttack, EnemyDefence);
+            Console.WriteLine("Une rapide analyse de l'ennemi vous révèle ses caractéristiques :\n[1]-Nom : {0}\n[2]-PV : {1}\n[3]-Attaque : {2}\n[4]-Défense : {3}\n", Enemy.Name, EnemyHealth, EnemyAttack, EnemyDefence);
 
 
             do
