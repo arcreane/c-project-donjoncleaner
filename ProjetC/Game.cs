@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetC.Dungeon;
 
 namespace DungeonCleaner
 {
@@ -21,39 +23,45 @@ namespace DungeonCleaner
         {
             
         }
-           
+
+        private Boolean nameFlag;
         public void Init()
         {
-            Console.WriteLine("Welcome to the C# project !\n");
-
-            bool valideName = false;
+            Utility.SetHeader("DUNGEON CLEANER");
             Hero hero = new Hero();
 
-            do
-            {
+            nameFlag = true;
 
-                Console.Write("Your journey is about to begin. What is your name ? : ");
+            do {
+                Console.Write("Ton voyage est sur le point de commencer, mais d'abord comment t'appelles tu ?\n");
                 hero.Name = Console.ReadLine();
-                Console.Write("\nSo your name is {0} ? (yes/no) : ", hero.Name);
 
-                String Answer = Console.ReadLine();
-                Answer = Answer.ToLower();
+                do
+                {
+                    Console.Write("\nTu t'appelles bien {0} ? (oui/non)\n", hero.Name);
 
-                if (Answer == "yes")
-                {
-                    valideName = true;
+                    String Answer = Console.ReadLine();
+                    Answer = Answer.ToLower();
+
+                    if (Answer == "oui")
+                    {
+                        nameFlag = false;
+                        break;
+                    }
+                    else if (Answer == "non")
+                    {
+                        Utility.SetHeader("DUNGEON CLEANER");
+                        Console.Write("Ah bon ? J'ai du mal comprendre dans ce cas...\n");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("La réponse entrée n'est pas valide !");
+                    }
                 }
-                else if (Answer == "no")
-                {
-                    valideName = false;
-                    Console.Clear();
-                }
-                else
-                {
-                    Console.WriteLine("Please enter a valide anwser !\n");
-                }
+                while (true);
             }
-            while (valideName == false);
+            while (nameFlag);
 
             Hero = hero;
         }
@@ -64,12 +72,12 @@ namespace DungeonCleaner
             {
                 do
                 {
-                    Console.WriteLine("\nChoisissez la difficulté générale du jeu :\n[1]-Easy\n[2]-MODERATE\n[3]-HARD\n[4]-DEATH");
+                    Console.WriteLine("\nChoisissez la difficulté générale du jeu\n[1]-EASY ?\n[2]-MODERATE ?\n[3]-HARD ?\n[4]-DEATH ?");
                     string Answer = Console.ReadLine();
                     Level = (Levels) (int.Parse(Answer) - 1);
                     if ((int.Parse(Answer) - 1) > 3 || (int.Parse(Answer) - 1) < 0)
                     {
-                        Console.WriteLine("La reponse : {0} n'est pas valide !", (int.Parse(Answer)));
+                        Console.WriteLine("{0} ne correspond à aucune difficulté !", (int.Parse(Answer)));
                     }
                     else
                     {
@@ -79,9 +87,9 @@ namespace DungeonCleaner
                 while (true);
 
                 Console.WriteLine("\nVotre mode de jeu a été réglé en : {0}", Level);
-                Console.WriteLine("Souhaitez-vous valider cette difficulté ? (yes/no)");
+                Console.WriteLine("Souhaitez-vous valider cette difficulté ? (oui/non)");
                 string Validation = Console.ReadLine().ToLower();
-                if (Validation == "yes")
+                if (Validation == "oui")
                 {
                     break;
                 }

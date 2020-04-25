@@ -43,15 +43,14 @@ namespace DungeonCleaner
         Random random = new Random();
         void setValues(int health, int attack, int defence)
         {
-            Array values = Enum.GetValues(typeof(Enemy_Name));
-            Name = values.GetValue(random.Next(values.Length)).ToString();
             Health *= health;
             Attack += attack;
             Defence += defence;
         }
         public Enemy() : base()
         {
-
+            Array values = Enum.GetValues(typeof(Enemy_Name));
+            Name = values.GetValue(random.Next(values.Length)).ToString();
         }
     }
 }

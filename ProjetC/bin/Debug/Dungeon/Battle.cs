@@ -11,101 +11,107 @@ namespace DungeonCleaner
         public Hero Hero { get; set; }
         public Enemy Enemy { get; set; }
 
-        private Boolean m_turn;
+        private Boolean m_turn = true;
+
+        private bool canContinue;
+
+        private int EnemyHealth;
+        private int EnemyAttack;
+        private int EnemyDefence;
+
+        private int damage;
+        private int ParsedUserAnswer;
 
         public Battle(Hero hero, Enemy enemy)
         {
             Hero = hero;
             Enemy = enemy;
-            bool canContinue = true;
 
-            int HeroHealth = hero.Health;
-            int HeroAttack = hero.Attack;
-            int HeroDefence = hero.Defence;
+            EnemyHealth = enemy.Health;
+            EnemyAttack = enemy.Attack;
+            EnemyDefence = enemy.Defence;
 
-            int EnemyHealth = enemy.Health;
-            int EnemyAttack = enemy.Attack;
-            int EnemyDefence = enemy.Defence;
-
-            int damage;
-            int ParsedUserAnswer;
+            Console.WriteLine("Un ennemi se présente devant vous ! Vous vous mettez en posture de combat !\n");
+            Console.WriteLine("Un rapide analyse de l'ennemi vous révèle ses caractéristiques :\n[1]-Nom : {0}\n[2]-PV : {1}\n[3]-Attaque : {2}\n[4]-Défense : {3}\n", Enemy.Name, EnemyHealth, EnemyAttack, EnemyDefence);
 
 
-            //Jouer avec les stats
             do
             {
-                  //Si m_turn est égal à true, le hero commence
-
-                Console.WriteLine("Un ennemi se présente devant vous ! Vous vous mettez en posture de combat !");
                 if (m_turn)
                 {
                     do
                     {
-                
-                        Console.WriteLine("Quelle action souhaitez-vous exécuter ? \n\t-[1]Attaquer ?\n\t-[2]Defendre ?");
-                        string userAnswer = Console.ReadLine();
+                           
+                        Console.WriteLine("Quelle action souhaitez-vous exécuter ? \n[1]-Attaquer (inflige {0} points de dégâts) ?\n[2]-Défendre ? (augmente votre défense de 5)", Hero.Attack - EnemyDefence);
+
+                        canContinue = false;
+
+                        String userAnswer = Console.ReadLine();
                         bool isParsable;
                         isParsable = int.TryParse(userAnswer, out ParsedUserAnswer);
 
-                        //Ici faire un switch d'action :
-                            //[1]Attaque
-                            //[2]Defendre
-                        //A la fin du tour, m_turn change de valeur
                         switch (ParsedUserAnswer)
                         {
                             case 1:
-                                if (HeroAttack > EnemyDefence)
+                                if (Hero.Attack > EnemyDefence)
                                 {
-                                    //Si on attaque, on soustrait l'attaque à la défense adverse pour donner les dégâts net
-                                    damage = (HeroAttack - EnemyDefence);
+                                    damage = (Hero.Attack - EnemyDefence);
                                     EnemyHealth -= damage;
-                                    Console.WriteLine("Vous infligez : {0} à l'ennemie : {1}", damage, enemy.Name);
-                                    m_turn = false;
+                                    Console.WriteLine("\nVous infligez {0} points de dégâts à \"{1}\", son nombre de PV s'élève maintenant à {2}\n", damage, Enemy.Name, EnemyHealth);
                                 }
                                 else
                                 {
-                                    //Si la défense adverse est supérieur à notre l'attaque, on inflige 1 de dégat 
                                     EnemyHealth -= 1;
-                                    m_turn = false;
+                                    Console.WriteLine("\nLa défense de l'adversaire est plus élevé que vos dégâts ! Vous infligez 1 point de dégât à \"{0}\", son nombre de PV s'élève maintenant à {1}\n", Enemy.Name, EnemyHealth);
                                 }
                                 canContinue = true;
                                 break;
                             case 2:
-                                //Si on défend, on la défense augmente de 5 points. 
-                                HeroDefence += 5;
+                                Hero.Defence += 5;
+                                Console.WriteLine("\nVous augmentez votre défense de 5 points ! Vous avez {0} de défense\n", Hero.Defence);
                                 canContinue = true;
                                 break;
                             default:
-                                Console.WriteLine("Veuillez entrer une réponse valide !");
+                                Console.WriteLine("Veuillez entrer une réponse valide !\n");
                                 canContinue = false;
                                 break;
                         }
-                    } while (canContinue);
+
+                        m_turn = false;
+
+                    } while (!canContinue);
                 }  
-                //Si m_turn est égal à false, l'ennemi attaque
-                //L'ennemi ne fait qu'attaquer
-                //A la fin du tour, m_turn change de valeur
                 else
                 {
-                    //Lors de l'affrontement, L'attaque est soustraite à la défence pour infliger les dégâts net.
-                   if(EnemyAttack > HeroDefence)
-                   {
-                       damage = EnemyAttack - HeroDefence;
-                       HeroHealth -= damage;
-                       /*if (ParsedUserAnswer == 2)
-                       {
-                            HeroDefence -= 5;
-                       }   */                   
-                       m_turn = true;
-                   }
-                   //Si la défence du hero est suppérieur à l'attaque du monstre, il infligue 1 de dégat.
-                    else
+                    Console.WriteLine("Vous êtes attaqué par \"{0}\" !", Enemy.Name);
+
+                    if (EnemyAttack > Hero.Defence)
                     {
-                       HeroHealth -= 1;
-                       m_turn = true;
+                        damage = EnemyAttack - Hero.Defence;
+                        Hero.Health -= damage;
+                        Console.WriteLine("Vous recevez {0} points de dégâts de la part de \"{1}\", votre nombre de PV s'élève maintenant à {2}\n", damage, Enemy.Name, Hero.Health);
                     }
+                    else
+                    {   
+                        Hero.Health -= 1;
+                        Console.WriteLine("Votre défense est plus élevé que les dégâts de l'adversaire ! Vous recevez 1 point de dégât de la part de \"{0}\", votre nombre de PV s'élève maintenant à {1}\n", Enemy.Name, Hero.Health);
+                    }
+
+                    m_turn = true;
                 }
-            } while (HeroHealth >0 && EnemyHealth >0);//Tant que la vie des joueur sont suppérieur à 0, le combat continue
+            } while (Hero.Health > 0 && EnemyHealth > 0);
+
+            if (Hero.Health <= 0)
+            {
+                Console.WriteLine("Vous avez été tué ! Appuyez sur n'importe quelle touche pour mettre fin à la partie");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Vous avez tué \"{0}\" ! Appuyez sur n'importe quelle touche pour poursuivre votre aventure.", Enemy.Name);
+                Console.ReadKey();
+            }
         }
     }
 }

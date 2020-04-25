@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetC.Dungeon;
 
 namespace DungeonCleaner
 {
@@ -45,17 +46,11 @@ namespace DungeonCleaner
 
         public void Enter()
         {
-            // foreach Enemies -> pour chaque Enemye Battle battle = new Battle(hero, enemy);
             foreach(Enemy enemy in Enemies)
             {
-                Console.WriteLine("Salut");
+                Utility.SetHeader("Room " + Depth);
                 Battle battle = new Battle(Hero, enemy);
             }
-        }
-
-        public void Exit()
-        {
-            // Console.WriteLine ->
         }
     }
 }

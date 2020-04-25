@@ -10,7 +10,7 @@ namespace DungeonCleaner
     {
         public Hero() : base()
         {
-            Health = 100;
+            Health = 50;
             Attack = 25;
             Defence = 15;
         }
