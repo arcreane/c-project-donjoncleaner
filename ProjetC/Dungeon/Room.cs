@@ -36,6 +36,7 @@ namespace DungeonCleaner
                     break;
             }
 
+            Enemies = new List<Enemy>();
             for (int i = 0; i < m_count; i++)
             {
                 Enemies.Add(new Enemy());
