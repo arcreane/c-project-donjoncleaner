@@ -28,50 +28,51 @@ namespace DungeonCleaner
             int EnemyDefence = enemy.Defence;
 
             int damage;
+            int ParsedUserAnswer;
 
 
             //Jouer avec les stats
             do
             {
-                do
-                {
-                    //Si m_turn est égal à true, le hero commence
+                  //Si m_turn est égal à true, le hero commence
 
-                    Console.WriteLine("Un ennmi se présente devant vous ! Vous vous mettez en posture de combat !");
-                    if (m_turn)
+                Console.WriteLine("Un ennemi se présente devant vous ! Vous vous mettez en posture de combat !");
+                if (m_turn)
+                {
+                    do
                     {
-                        Console.WriteLine("Quelle action souhaitez-vous exécuter ? \nt-[1]Attaquer ?\nt-[2]Defendre ?");
+                
+                        Console.WriteLine("Quelle action souhaitez-vous exécuter ? \n\t-[1]Attaquer ?\n\t-[2]Defendre ?");
                         string userAnswer = Console.ReadLine();
                         bool isParsable;
-                        int ParsedUserAnswer;
                         isParsable = int.TryParse(userAnswer, out ParsedUserAnswer);
 
                         //Ici faire un switch d'action :
-                        //[1]Attaque
-                        //[2]Defendre
+                            //[1]Attaque
+                            //[2]Defendre
                         //A la fin du tour, m_turn change de valeur
                         switch (ParsedUserAnswer)
                         {
                             case 1:
                                 if (HeroAttack > EnemyDefence)
                                 {
-                                    //Si on attaque, on soustrait l'attaque à la défense adverse pour donner les dégâts net.
-                                    //Si la défense adverse est supérieur à notre l'attaque, on inflige 1 de dégat 
+                                    //Si on attaque, on soustrait l'attaque à la défense adverse pour donner les dégâts net
                                     damage = (HeroAttack - EnemyDefence);
                                     EnemyHealth -= damage;
+                                    Console.WriteLine("Vous infligez : {0} à l'ennemie : {1}", damage, enemy.Name);
                                     m_turn = false;
                                 }
                                 else
                                 {
-                                    //Si on défend, on la défense augmente de 5 points. 
-                                    //Si l'attaque est supérieur à la défense, on prend 1 de dégat 
+                                    //Si la défense adverse est supérieur à notre l'attaque, on inflige 1 de dégat 
                                     EnemyHealth -= 1;
                                     m_turn = false;
                                 }
                                 canContinue = true;
                                 break;
                             case 2:
-
+                                //Si on défend, on la défense augmente de 5 points. 
+                                HeroDefence += 5;
                                 canContinue = true;
                                 break;
                             default:
@@ -79,18 +80,31 @@ namespace DungeonCleaner
                                 canContinue = false;
                                 break;
                         }
-
-                    }
-                } while (canContinue);
-
+                    } while (canContinue);
+                }  
                 //Si m_turn est égal à false, l'ennemi attaque
                 //L'ennemi ne fait qu'attaquer
-
-                //Lors de l'affrontement, L'attaque est soustraite à la défence pour infliger les dégâts net.
-                //Si la défence du hero est suppérieur à l'attaque du monstre, il infligue 1 de dégat.
-
                 //A la fin du tour, m_turn change de valeur
-
+                else
+                {
+                    //Lors de l'affrontement, L'attaque est soustraite à la défence pour infliger les dégâts net.
+                   if(EnemyAttack > HeroDefence)
+                   {
+                       damage = EnemyAttack - HeroDefence;
+                       HeroHealth -= damage;
+                       /*if (ParsedUserAnswer == 2)
+                       {
+                            HeroDefence -= 5;
+                       }   */                   
+                       m_turn = true;
+                   }
+                   //Si la défence du hero est suppérieur à l'attaque du monstre, il infligue 1 de dégat.
+                    else
+                    {
+                       HeroHealth -= 1;
+                       m_turn = true;
+                    }
+                }
             } while (HeroHealth >0 && EnemyHealth >0);//Tant que la vie des joueur sont suppérieur à 0, le combat continue
         }
     }

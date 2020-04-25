@@ -48,6 +48,7 @@ namespace DungeonCleaner
             // foreach Enemies -> pour chaque Enemye Battle battle = new Battle(hero, enemy);
             foreach(Enemy enemy in Enemies)
             {
+                Console.WriteLine("Salut");
                 Battle battle = new Battle(Hero, enemy);
             }
         }

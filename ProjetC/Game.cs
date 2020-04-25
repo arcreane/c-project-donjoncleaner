@@ -66,7 +66,7 @@ namespace DungeonCleaner
                 {
                     Console.WriteLine("\nChoisissez la difficulté générale du jeu :\n[1]-Easy\n[2]-MODERATE\n[3]-HARD\n[4]-DEATH");
                     string Answer = Console.ReadLine();
-                    Level = (Levels)(int.Parse(Answer) - 1);
+                    Level = (Levels) (int.Parse(Answer) - 1);
                     if ((int.Parse(Answer) - 1) > 3 || (int.Parse(Answer) - 1) < 0)
                     {
                         Console.WriteLine("La reponse : {0} n'est pas valide !", (int.Parse(Answer)));

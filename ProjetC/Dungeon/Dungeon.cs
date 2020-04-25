@@ -29,10 +29,8 @@ namespace DungeonCleaner
             for (m_index = 1; m_index <= 8; m_index++)
             {
                 Room room = new Room(hero, level);
-                Console.WriteLine(m_index);
+                room.Enter();
             }
-
-            Console.ReadLine(); 
         }
     }
 }

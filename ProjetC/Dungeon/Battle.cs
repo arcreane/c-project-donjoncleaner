@@ -36,13 +36,13 @@ namespace DungeonCleaner
             {
                   //Si m_turn est égal à true, le hero commence
 
-                Console.WriteLine("Un ennmi se présente devant vous ! Vous vous mettez en posture de combat !");
+                Console.WriteLine("Un ennemi se présente devant vous ! Vous vous mettez en posture de combat !");
                 if (m_turn)
                 {
                     do
                     {
                 
-                        Console.WriteLine("Quelle action souhaitez-vous exécuter ? \nt-[1]Attaquer ?\nt-[2]Defendre ?");
+                        Console.WriteLine("Quelle action souhaitez-vous exécuter ? \n\t-[1]Attaquer ?\n\t-[2]Defendre ?");
                         string userAnswer = Console.ReadLine();
                         bool isParsable;
                         isParsable = int.TryParse(userAnswer, out ParsedUserAnswer);
@@ -59,6 +59,7 @@ namespace DungeonCleaner
                                     //Si on attaque, on soustrait l'attaque à la défense adverse pour donner les dégâts net
                                     damage = (HeroAttack - EnemyDefence);
                                     EnemyHealth -= damage;
+                                    Console.WriteLine("Vous infligez : {0} à l'ennemie : {1}", damage, enemy.Name);
                                     m_turn = false;
                                 }
                                 else
@@ -91,10 +92,10 @@ namespace DungeonCleaner
                    {
                        damage = EnemyAttack - HeroDefence;
                        HeroHealth -= damage;
-                       if (ParsedUserAnswer == 2)
+                       /*if (ParsedUserAnswer == 2)
                        {
                             HeroDefence -= 5;
-                       }                      
+                       }   */                   
                        m_turn = true;
                    }
                    //Si la défence du hero est suppérieur à l'attaque du monstre, il infligue 1 de dégat.
