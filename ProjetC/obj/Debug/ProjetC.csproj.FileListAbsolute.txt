@@ -5,3 +5,6 @@ C:\Users\vieza\source\repos\c-project-donjoncleaner-master\ProjetC\bin\Debug\Pro
 C:\Users\vieza\source\repos\c-project-donjoncleaner-master\ProjetC\bin\Debug\ProjetC.pdb
 C:\Users\vieza\source\repos\c-project-donjoncleaner-master\ProjetC\obj\Debug\ProjetC.exe
 C:\Users\vieza\source\repos\c-project-donjoncleaner-master\ProjetC\obj\Debug\ProjetC.pdb
+C:\Users\vieza\Source\Repos\c-project-donjoncleaner\ProjetC\obj\Debug\ProjetC.csprojAssemblyReference.cache
+C:\Users\vieza\Source\Repos\c-project-donjoncleaner\ProjetC\obj\Debug\ProjetC.exe
+C:\Users\vieza\Source\Repos\c-project-donjoncleaner\ProjetC\obj\Debug\ProjetC.pdb
