@@ -47,31 +47,30 @@ namespace DungeonCleaner
                         isParsable = int.TryParse(userAnswer, out ParsedUserAnswer);
 
                         //Ici faire un switch d'action :
-                        //[1]Attaque
-                        //[2]Defendre
+                            //[1]Attaque
+                            //[2]Defendre
                         //A la fin du tour, m_turn change de valeur
                         switch (ParsedUserAnswer)
                         {
                             case 1:
                                 if (HeroAttack > EnemyDefence)
                                 {
-                                    //Si on attaque, on soustrait l'attaque à la défense adverse pour donner les dégâts net.
-                                    //Si la défense adverse est supérieur à notre l'attaque, on inflige 1 de dégat 
+                                    //Si on attaque, on soustrait l'attaque à la défense adverse pour donner les dégâts net
                                     damage = (HeroAttack - EnemyDefence);
                                     EnemyHealth -= damage;
                                     m_turn = false;
                                 }
                                 else
                                 {
-                                    //Si on défend, on la défense augmente de 5 points. 
-                                    //Si l'attaque est supérieur à la défense, on prend 1 de dégat 
+                                    //Si la défense adverse est supérieur à notre l'attaque, on inflige 1 de dégat 
                                     EnemyHealth -= 1;
                                     m_turn = false;
                                 }
                                 canContinue = true;
                                 break;
                             case 2:
-
+                                //Si on défend, on la défense augmente de 5 points. 
+                                //Si l'attaque est supérieur à la défense, on prend 1 de dégat 
                                 canContinue = true;
                                 break;
                             default:
